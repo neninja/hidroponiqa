@@ -1,0 +1,30 @@
+{
+    "name": "hidroponiqa",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint tests",
+        "lint:fix": "npm run lint -- --fix",
+        "prettier": "prettier tests --check",
+        "prettier:fix": "npm run prettier -- --write",
+        "format": "npm run lint:fix && npm run prettier:fix",
+        "update-snapshots": "playwright test --update-snapshots",
+        "start": "playwright test --reporter=html",
+        "test": "playwright test --reporter=list"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.38.1",
+        "@types/node": "^20.6.3"
+    },
+    "dependencies": {
+        "@faker-js/faker": "^8.1.0",
+        "@typescript-eslint/eslint-plugin": "^6.7.2",
+        "@typescript-eslint/parser": "^6.7.2",
+        "eslint": "^8.50.0",
+        "eslint-plugin-prettier": "^5.0.0"
+    }
+}
