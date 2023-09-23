@@ -16,8 +16,15 @@ class ApiHelper {
   }
 
   async newAdminToken() {
-    return await this.newToken({
+    return this.newToken({
       email: "admin@hidroponi.ca",
+      password: "123",
+    });
+  }
+
+  async newTestToken() {
+    return this.newToken({
+      email: "test@hidroponi.ca",
       password: "123",
     });
   }

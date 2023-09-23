@@ -13,12 +13,28 @@ test("requires authentication", async ({ request }) => {
 test("gets current user", async ({ request, api }) => {
   const token = await api.newAdminToken();
 
-  const meResponse = await request.get("/api/me", {
+  const response = await request.get("/api/me", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
-  expect(meResponse.status()).toBe(200);
-  expect(await meResponse.json()).toHaveProperty("data.id");
+  expect(response.status()).toBe(200);
+  expect(await response.json()).toHaveProperty("data.id");
+});
+
+test("gets test user", async ({ request, api }) => {
+  const token = await api.newTestToken();
+
+  const response = await request.get("/api/me", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  expect(response.status()).toBe(200);
+  expect(await response.json()).toHaveProperty(
+    "data.email",
+    "test@hidroponi.ca",
+  );
 });
