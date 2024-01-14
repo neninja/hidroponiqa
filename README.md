@@ -2,6 +2,7 @@
 
 ```sh
 npm start
+npm ui
 npm test
 npm test token
 npm test -- --debug

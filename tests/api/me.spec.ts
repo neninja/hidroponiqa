@@ -24,7 +24,7 @@ test("gets current user", async ({ request, api }) => {
 });
 
 test("gets test user", async ({ request, api }) => {
-  const token = await api.newTestToken();
+  const token = await api.newStudentToken();
 
   const response = await request.get("/api/me", {
     headers: {
@@ -35,6 +35,6 @@ test("gets test user", async ({ request, api }) => {
   expect(response.status()).toBe(200);
   expect(await response.json()).toHaveProperty(
     "data.email",
-    "test@hidroponi.ca",
+    "qa_student@hidroponi.ca",
   );
 });
