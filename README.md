@@ -4,6 +4,8 @@
 
 Testes automatizados do [Hidroponica](https://github.com/nenitf/hidroponica). Todos os testes necessitam do sistema sendo executado localmente em ambiente *local*/*staging* com o *seeder* padrão.
 
+![NPM start](./docs/peek.gif)
+
 ## Utilização
 
 - `npm start` desenvolvimento/debug dos testes 
