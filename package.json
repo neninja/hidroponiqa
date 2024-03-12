@@ -11,6 +11,7 @@
         "format": "npm run lint:fix && npm run prettier:fix",
         "update-snapshots": "playwright test --update-snapshots",
         "start": "playwright test --ui",
+        "report": "playwright test --reporter=html",
         "test": "playwright test --reporter=dot"
     },
     "keywords": [],
