@@ -3,7 +3,6 @@ import { test as setup, expect } from "@playwright/test";
 const authFile = "playwright/auth/backoffice-admin.json";
 
 setup("Backoffice admin login", async ({ page }) => {
-  page.setViewportSize({ width: 1366, height: 1024 });
   await page.goto("/admin/login");
   await expect(page).toHaveScreenshot("login.png");
 

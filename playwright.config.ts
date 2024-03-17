@@ -1,10 +1,11 @@
 import type { PlaywrightTestConfig } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
+  testDir: "./tests",
   use: {
     headless: true,
     baseURL: "http://localhost",
-    viewport: { width: 1280, height: 720 },
+    viewport: { width: 1366, height: 1024 },
     screenshot: "only-on-failure",
     // video: 'on-first-retry',
   },
@@ -16,7 +17,6 @@ const config: PlaywrightTestConfig = {
     },
     {
       name: "backoffice",
-      testDir: "./tests",
       use: {
         storageState: "playwright/auth/backoffice-admin.json",
       },
