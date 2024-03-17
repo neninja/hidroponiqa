@@ -28,7 +28,7 @@ test("Alterações básicas", async ({ page }) => {
   await page.goto("/admin/texts/51882430-4ac9-3eab-b903-f91b3bb5656e/edit");
 
   const newTitle = faker.word.words();
-  page.getByLabel("Título").fill(newTitle);
+  await page.getByLabel("Título").fill(newTitle);
   await page.getByRole("button", { name: "Salvar alterações" }).click();
 
   await page.goto("/admin/texts/51882430-4ac9-3eab-b903-f91b3bb5656e/edit");

@@ -27,6 +27,10 @@ const config: PlaywrightTestConfig = {
       name: "API",
       testMatch: /api\/.*\.spec\.ts/,
     },
+    {
+      name: "Documentação",
+      testMatch: /docs\/.*\.spec\.ts/,
+    },
   ],
 };
 
