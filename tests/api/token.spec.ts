@@ -4,7 +4,7 @@ import { expect, test } from "@playwright/test";
 test("issue token for protected endpoint", async ({ request }) => {
   const response = await request.post("/api/tokens", {
     data: {
-      email: "admin@hidroponi.ca",
+      email: "qa_admin@hidroponi.ca",
       password: "123",
     },
   });

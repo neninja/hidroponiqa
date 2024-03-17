@@ -23,6 +23,10 @@ const config: PlaywrightTestConfig = {
       dependencies: ["backoffice setup"],
       testMatch: /backoffice\/.*\.spec\.ts/,
     },
+    {
+      name: "API",
+      testMatch: /api\/.*\.spec\.ts/,
+    },
   ],
 };
 
