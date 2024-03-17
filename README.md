@@ -6,11 +6,20 @@ Testes automatizados do [Hidroponica](https://github.com/neninja/hidroponica). T
 
 ![NPM start](./docs/peek.gif)
 
-## Utilização
+## Desenvolvimento
+
+## Ambiente
+
+```sh
+npm i
+```
+
+## Execução
 
 - `npm start` desenvolvimento/debug dos testes 
 - `npm test` utilização dos testes para validar o sistema
-- `npm run update-snapshots` atualização de snapshots para os testes de regressão visual
+
+> Apesar de termos o comando `npm run update-snapshots`, para atualizar os screenshots é melhor apagar manualmente e rodar novamente os testes para recriá-los. Isso evita atualizar todas as capturas de maneira equivocada
 
 ### Linting
 
