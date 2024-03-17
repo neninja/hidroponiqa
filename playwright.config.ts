@@ -7,7 +7,7 @@ const config: PlaywrightTestConfig = {
     baseURL: "http://localhost",
     viewport: { width: 1366, height: 1024 },
     screenshot: "only-on-failure",
-    // video: 'on-first-retry',
+    //video: "on", // debug
   },
   projects: [
     {
