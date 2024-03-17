@@ -1,4 +1,3 @@
-//import { faker } from "@faker-js/faker";
 import { expect, test } from "@playwright/test";
 
 test("Happy path", async ({ page }) => {
@@ -7,5 +6,6 @@ test("Happy path", async ({ page }) => {
   await page.waitForLoadState();
 
   await page.getByRole("heading", { name: "Textos" }).click();
+
   await expect(page).toHaveScreenshot("texts.png");
 });
