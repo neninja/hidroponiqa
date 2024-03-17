@@ -48,4 +48,20 @@ test.describe("Edição", () => {
     await page.goto("/admin/texts/51882430-4ac9-3eab-b903-f91b3bb5656e/edit");
     expect(page.getByLabel("Título")).toHaveValue(newTitle);
   });
+
+  test("Upload de audio", async ({ page }) => {
+    await page
+      .locator("input[type='file']")
+      .setInputFiles("resources/audio.mp3");
+
+    await page.waitForLoadState("networkidle");
+
+    expect(page.getByText("Envio finalizado")).toBeDefined();
+    expect(page.getByRole("button", { name: /enviando/gi })).toBeDefined();
+    await page.getByRole("button", { name: /salvar/gi }).click();
+
+    await page.goto("/admin/texts/51882430-4ac9-3eab-b903-f91b3bb5656e/edit");
+    await page.waitForLoadState("networkidle");
+    expect(page.getByText("the-fox-and-the-grapes").first()).toBeVisible();
+  });
 });
