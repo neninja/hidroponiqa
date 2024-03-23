@@ -24,6 +24,19 @@ const config: PlaywrightTestConfig = {
       testMatch: /backoffice\/.*\.spec\.ts/,
     },
     {
+      name: "webapp login",
+      testDir: "./tests/webapp",
+      testMatch: /login\.setup\.ts/,
+    },
+    {
+      name: "webapp",
+      dependencies: ["webapp login"],
+      use: {
+        storageState: "playwright/auth/webapp-student.json",
+      },
+      testMatch: /webapp\/.*\.spec\.ts/,
+    },
+    {
       name: "API",
       testMatch: /api\/.*\.spec\.ts/,
     },
