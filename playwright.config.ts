@@ -11,16 +11,16 @@ const config: PlaywrightTestConfig = {
   },
   projects: [
     {
-      name: "backoffice setup",
+      name: "backoffice login",
       testDir: "./tests/backoffice",
       testMatch: /login-admin\.setup\.ts/,
     },
     {
       name: "backoffice",
+      dependencies: ["backoffice login"],
       use: {
         storageState: "playwright/auth/backoffice-admin.json",
       },
-      dependencies: ["backoffice setup"],
       testMatch: /backoffice\/.*\.spec\.ts/,
     },
     {

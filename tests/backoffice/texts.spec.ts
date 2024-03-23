@@ -1,6 +1,5 @@
 import { faker } from "@faker-js/faker";
 import { expect, test } from "@playwright/test";
-import path from "path";
 
 test.describe("Listagem", () => {
   test("Happy path", async ({ page }) => {
